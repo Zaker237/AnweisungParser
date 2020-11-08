@@ -16,7 +16,7 @@ def create_csv_mit_daten(anweisungen = "instructions.txt", datei_namen = "instru
     """
     anweisung_liste = lese_zeilen_in_data(anweisungen)
     with open(datei_namen, 'w', newline='') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter=' ',quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        spamwriter = csv.writer(csvfile, delimiter=',',quotechar='|', quoting=csv.QUOTE_MINIMAL)
         spamwriter.writerow(["Anweisung", "Zielsblock", "Umgebungsblock"])
         for anweisung in anweisung_liste:
             parser = RuleBasedParser(anweisung)
